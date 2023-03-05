@@ -20,8 +20,10 @@
                 <td th:text="${user.getId()}">Value</td>
                 <td th:text="${user.getName()} ">Value</td>
                 <td th:text="${user.getAge()} ">Value</td>
-                <td><a th:href="@{user/update-page/{id}(id=${user.getId()})}">Update</a></td>
-                <td><a th:href="@{user/delete/{id}(id=${user.getId})}">Delete</a></td>
+                <td><form th:method="GET" th:action="@{user/update-page/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Update"/></form></td>
+                <td><form th:method="DELETE" th:action="@{user/delete/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Delete"/></form></td>
             </tr>
         </th:block>
         <br>
